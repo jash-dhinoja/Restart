@@ -24,8 +24,7 @@ struct OnboaringView: View {
                         .fontWeight(.heavy)
                         .foregroundColor(.white )
                     Text("""
-                        Dummy Text Line1
-                        Dummy Text Lne2 as a fasf asf
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         """)
                     .font(.title3)
                     .fontWeight(.light)
@@ -36,14 +35,7 @@ struct OnboaringView: View {
                 
                 //                Center
                 ZStack{
-                    ZStack{
-                        Circle()
-                            .stroke(.white.opacity(0.2), lineWidth: 40)
-                            .frame(width: 260,height: 260,alignment: .center)
-                        Circle()
-                            .stroke(.white.opacity(0.2), lineWidth: 80)
-                            .frame(width: 260,height: 260,alignment: .center)
-                    }
+                    CircleGroupView(shapeColor: .white, shapeOpacity: 0.2)
                     Image("character-1")
                         .resizable()
                         .scaledToFit()
