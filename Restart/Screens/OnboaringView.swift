@@ -11,6 +11,8 @@ struct OnboaringView: View {
     //MARK: Properties
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
     
+    let hapticFeedback = UINotificationFeedbackGenerator()
+    
     @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
     @State private var buttonOffset: CGFloat = 0
     
@@ -139,9 +141,12 @@ struct OnboaringView: View {
                                 .onEnded{ _ in
                                     withAnimation(Animation.easeOut(duration: 0.4)){
                                         if buttonOffset > buttonWidth/2{
+                                            hapticFeedback.notificationOccurred(.success)
+                                            playSound(sound: "chimeup", type: "mp3")
                                             buttonOffset = buttonWidth - 80
                                             isOnboardingViewActive = false
                                         }else{
+                                            hapticFeedback.notificationOccurred(.warning)
                                             buttonOffset = 0
                                         }
                                     }
@@ -160,6 +165,7 @@ struct OnboaringView: View {
         .onAppear(perform: {
             isAnimating = true
         })
+        .preferredColorScheme(.dark)
     }
 }
 
