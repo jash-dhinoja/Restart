@@ -9,7 +9,7 @@ https://user-images.githubusercontent.com/80220432/229626234-d5b10164-4c18-4d40-
 
 ## About the project
 
-This project demostrates the use of SwiftUI framework to create beautiful layouts using illustrations alongwith smooth animations.
+This project demonstrates the use of the SwiftUI framework to create beautiful layouts using illustrations along with smooth animations.
 
 ### Views
 
